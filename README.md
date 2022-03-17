@@ -27,10 +27,7 @@ The version provided on this repository is
 according to OpenBSD's internal versioning of modules. The version string has 
 been kept in ``strlcpy.c``. This is the most recent version at the time I 
 sourced this module back and I am **not** guaranteeing keeping it up-to-date 
-with upstream. This version is also reported to be newer than the one you might 
-find [on my own projects,](https://sr.ht/~arivigo) the main differences being 
-new contact information of Miller himself and improved variable names, as far 
-as I can tell.
+with upstream.
 
 Also, this repository provides a ready-to-use header file ``strlcpy.h`` for you
 to use. This trivial header file was written from scratch.

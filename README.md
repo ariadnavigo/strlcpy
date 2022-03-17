@@ -64,3 +64,5 @@ License. See ``LICENSE`` file for copyright and license details.
 [^2]: Many standard header files pull the definition by themselves, but I 
    suggest you manually include ``stddef.h`` to avoid any undefined or 
    unportable behaviors.
+
+[^3]: [https://git.sr.ht/~arivigo]

@@ -22,13 +22,15 @@ have unused functions lying around dead in your source code, you'll be very
 likely to prefer a self-contained version like the one I'm providing you with 
 here.
 
-The version provided on this repository is 1.16, according to OpenBSD's
-internal versioning of modules.[^1] The version string has been kept in 
-``strlcpy.c``. This is the most recent version at the time I sourced this 
-module back and I am **not** guaranteeing keeping it up-to-date with upstream.
-This version is also reported to be newer than the one you might find on my own
-projects, [^3] the main differences being new contact information of Miller 
-himself and improved variable names.
+The version provided on this repository is 
+[1.16,](https://cvsweb.openbsd.org/src/lib/libc/string/strlcpy.c?rev=1.16&content-type=text/x-cvsweb-markup)
+according to OpenBSD's internal versioning of modules. The version string has 
+been kept in ``strlcpy.c``. This is the most recent version at the time I 
+sourced this module back and I am **not** guaranteeing keeping it up-to-date 
+with upstream. This version is also reported to be newer than the one you might 
+find [on my own projects,](https://sr.ht/~arivigo) the main differences being 
+new contact information of Miller himself and improved variable names, as far 
+as I can tell.
 
 Also, this repository provides a ready-to-use header file ``strlcpy.h`` for you
 to use. This trivial header file was written from scratch.
@@ -40,8 +42,8 @@ how to embed a module and its header file into the source tree of their C
 projects.
 
 Be aware, though that ``strlcpy.h`` requires you to include the appropriate 
-header file for defining ``size_t``[^2] before including ``strlcpy.h`` into 
-your own program.
+header file for defining ``size_t`` before including ``strlcpy.h`` into your 
+own program.
 
 Just as a reminder, the interface of ``strlcpy()`` reads as follows:
 
@@ -58,11 +60,3 @@ size_t strlcpy(char *dst, const char *src, size_t siz);
 
 ``strlcpy.c`` and its associated header file are published under the ISC 
 License. See ``LICENSE`` file for copyright and license details.
-
-[^1]: [https://cvsweb.openbsd.org/src/lib/libc/string/strlcpy.c?rev=1.16&content-type=text/x-cvsweb-markup](Link to strlcpy on OpenBSD's CVSWeb)
-
-[^2]: Many standard header files pull the definition by themselves, but I 
-   suggest you manually include ``stddef.h`` to avoid any undefined or 
-   unportable behaviors.
-
-[^3]: [https://git.sr.ht/~arivigo]

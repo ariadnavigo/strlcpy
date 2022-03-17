@@ -46,11 +46,11 @@ Just as a reminder, the interface of ``strlcpy()`` reads as follows:
 
 ```C
 /*
- * Copy src to string dst of size siz. At most siz-1 characters
- * will be copied. Always NUL terminates (unless siz == 0).
- * Returns strlen(src); if retval >= siz, truncation occurred.
+ * Copy string src to buffer dst of size dsize.  At most dsize-1
+ * chars will be copied.  Always NUL terminates (unless dsize == 0).
+ * Returns strlen(src); if retval >= dsize, truncation occurred.
  */
-size_t strlcpy(char *dst, const char *src, size_t siz);
+size_t strlcpy(char *dst, const char *src, size_t dsize);
 ```
 
 ## License

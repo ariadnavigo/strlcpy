@@ -6,13 +6,14 @@ originally written for the OpenBSD project, as far as I understand.
 **guarantees** the destination string to be null-terminated, thus being more
 reliable and safer than both standard ``strncpy()`` and ``strcpy()``.
 
-I'm providing this code for everyone's convenience. I remember having some
-trouble sourcing this back then from a _trustworthy_ source. Some projects
-using ``strlcpy()`` seem to have lost track of the true origins of the module
-and have modified its licensing and copyright notices. This module being over
-two decades old and quite popular makes me think those misattribution cases
-are due to the community losing track of where ``strlcpy()`` actually 
-originated from, and not due to any kind of malice.
+I'm providing this code for everyone's convenience, with portability across
+POSIX systems in mind. I remember having some trouble sourcing this back then 
+from a _trustworthy_ source. Some projects using ``strlcpy()`` seem to have 
+lost track of the true origins of the module and have modified its licensing 
+and copyright notices. This module being over two decades old and quite popular 
+makes me think those misattribution cases are due to the community losing track 
+of where ``strlcpy()`` actually originated from, and not due to any kind of 
+malice.
 
 Usually, to get a copy of this function you'd take it from other projects or, 
 worse, try writing your own version of it. Also, you'll find this function in 
@@ -28,6 +29,12 @@ according to OpenBSD's internal versioning of modules. The version string has
 been kept in ``strlcpy.c``. This is the most recent version at the time I 
 sourced this module back and I am **not** guaranteeing keeping it up-to-date 
 with upstream.
+
+An OpenBSD-specific call to ``DEF_WEAK()`` at the end of the module has been
+removed. This modification does not affect the behavior of ``strlcpy()`` in any 
+means whatsoever, as it is related to how the function is defined within the 
+OS's libc, as can be read 
+[on OpenBSD's libc documentation.](https://cvsweb.openbsd.org/src/lib/libc/include/DETAILS?rev=1.1&content-type=text/x-cvsweb-markup)
 
 Also, this repository provides a ready-to-use header file ``strlcpy.h`` for you
 to use. This trivial header file was written from scratch.
